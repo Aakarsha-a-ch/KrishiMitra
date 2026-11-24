@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>KrishiMitra | Aakarsha Archana & Shiney (B.Tech CSE AIML)</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+</head>
+
+<body>
+
+  <!-- ================= MAIN APP SHELL (Hidden during Sign In Page) ================= -->
+  <div id="km-app-shell">
+
+  <!-- ================= APP LAYOUT: MODERN SIDEBAR (Desktop) + MAIN CONTENT ================= -->
+  <div class="km-app-layout">
+
+    <!-- ================= MODERN LEFT SIDEBAR ================= -->
+    <aside class="km-sidebar" id="km-sidebar">
+      <!-- Sidebar Brand Card -->
+      <div class="km-sidebar-brand-card">
+        <div class="km-sidebar-brand-head">
+          <div class="km-brand-logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M12 8v8"/>
+              <path d="M8 12h8"/>
+            </svg>
+          </div>
+          <div>
+            <div class="km-brand-title">KrishiMitra <span class="km-brand-title-sub" data-i18n="brand_sub">కృషిమిత్ర</span></div>
+            <div class="km-brand-sub">👩‍💻 Aakarsha Archana & Shiney (B.Tech CSE AIML)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Language Selector (Telugu / English) -->
+      <div class="km-sidebar-lang-toggle">
+        <button class="km-lang-chip active" id="sidebar-lang-te" onclick="setLanguage('te')">🇮🇳 తెలుగు</button>
+        <button class="km-lang-chip" id="sidebar-lang-en" onclick="setLanguage('en')">🌐 English</button>
+      </div>
+
+      <!-- Navigation Menu: Clean SVGs, No Canvas, No Enlargement -->
+      <nav class="km-sidebar-nav">
+        <button class="km-menu-link active" data-tab="home" onclick="showTab('home')">
+          <svg class="km-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <span data-i18n="nav_item_1">హోమ్</span>
+        </button>
+
+        <button class="km-menu-link" data-tab="crop_health" onclick="showTab('crop_health')">
+          <svg class="km-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6"/>
+          </svg>
+          <span data-i18n="nav_item_2">తెగుళ్ల స్కానర్</span>
+        </button>
+
+        <button class="km-menu-link" data-tab="weather" onclick="showTab('weather')">
+          <svg class="km-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+          </svg>
+          <span data-i18n="nav_item_3">ప్రత్యక్ష వాతావరణం</span>
+        </button>
+
+        <button class="km-menu-link" data-tab="soil" onclick="showTab('soil')">
+          <svg class="km-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 3v4.5l-4.5 9A3 3 0 0 0 7.2 21h9.6a3 3 0 0 0 2.7-4.5L15 7.5V3"/>
+            <line x1="8" y1="3" x2="16" y2="3"/>
+            <line x1="6.5" y1="14" x2="17.5" y2="14"/>
+          </svg>
+          <span data-i18n="nav_item_4">నేల ఆరోగ్యం</span>
+        </button>
+
+        <button class="km-menu-link" data-tab="rec" onclick="showTab('rec')">
+          <svg class="km-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a10 10 0 0 1 10 10c0 5.5-4.5 10-10 10S2 17.5 2 12"/>
+            <path d="m4.93 4.93 4.24 4.24"/>
+            <path d="m14.83 9.17 4.24-4.24"/>
+            <path d="M12 8v8"/>
+            <path d="M8 12h8"/>
+          </svg>
+          <span data-i18n="nav_item_5">పంట సిఫార్సు</span>
+        </button>
+
+        <button class="km-menu-link" data-tab="community" onclick="showTab('community')">
+          <svg class="km-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          </svg>
+          <span data-i18n="nav_item_6">రైతు వేదిక</span>
+        </button>
+
+        <button class="km-menu-link" data-tab="assistant" onclick="showTab('assistant')">
+          <svg class="km-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="10" rx="3"/>
+            <circle cx="12" cy="5" r="2"/>
+            <path d="M12 7v4"/>
+            <circle cx="8" cy="16" r="1" fill="#34d399"/>
+            <circle cx="16" cy="16" r="1" fill="#34d399"/>
+          </svg>
+          <span data-i18n="nav_item_7">AI అసిస్టెంట్</span>
+        </button>
+
+        <button class="km-menu-link" data-tab="profile" onclick="showTab('profile')">
+          <svg class="km-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="7" r="4"/>
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          </svg>
+          <span data-i18n="nav_item_8">రైతు ప్రొఫైల్</span>
+        </button>
+
+        <button class="km-menu-link" data-tab="about" onclick="showTab('about')">
+          <svg class="km-menu-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+          <span data-i18n="nav_item_9">ప్రాజెక్ట్ వివరాలు</span>
+        </button>
+      </nav>
+
+      <!-- Sidebar Bottom Footer: Farmer Card & Sign Out -->
+      <div class="km-sidebar-footer">
+        <div class="km-sidebar-farmer-card" onclick="showTab('profile')" title="రైతు ప్రొఫైల్ చూడండి / View Profile">
+          <div class="km-farmer-avatar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="7" r="4"/>
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            </svg>
+          </div>
+          <div class="km-farmer-meta">
+            <div class="km-farmer-name" id="sidebar-user-name">Archana</div>
+            <div class="km-farmer-crop" id="sidebar-crop-info">వరి (Paddy) • Vijayawada</div>
+          </div>
+        </div>
+
+        <button class="km-btn-sidebar-signout" onclick="signOutToLoginPage()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline points="16 17 21 12 16 7"/>
+            <line x1="21" y1="12" x2="9" y2="12"/>
+          </svg>
+          <span data-i18n="btn_signout">లాగ్ అవుట్ / రైతును మార్చండి</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ================= RIGHT MAIN AREA ================= -->
+    <div class="km-main-area">
+
+      <!-- Mobile Top Bar (Visible ONLY on Mobile screens <= 768px) -->
+      <header class="km-mobile-header">
+        <div class="km-mobile-brand">
+          <div class="km-brand-logo" style="width: 32px; height: 32px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-size: 1rem; font-weight: 800; color: #ffffff; line-height: 1.1;">KrishiMitra</div>
+            <div style="font-size: 0.65rem; color: #6ee7b7;">Aakarsha Archana & Shiney</div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <button class="km-btn-lang" onclick="toggleLanguage()" style="padding: 4px 10px; font-size: 0.78rem;">
+            <span id="lang-label">తెలుగు</span>
+          </button>
+          <button class="km-btn km-btn-secondary" onclick="signOutToLoginPage()" style="padding: 4px 8px; font-size: 0.75rem; border-color: rgba(248, 113, 113, 0.4); color: #fca5a5;">
+            <span data-i18n="btn_signout_short">లాగ్ అవుట్</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- ================= 1. HOME VIEW ================= -->
+      <section id="view-home" class="km-view active">
+        <!-- Welcome Hero Banner -->
+        <div class="km-hero-card">
+          <div class="km-hero-greeting" id="hero-greeting">నమస్కారం, Archana గారు! 🌾</div>
+          <div class="km-hero-inst" id="hero-inst" data-i18n="hero_inst">👩‍💻 ఆకర్ష అర్చన & షైనీ | B.Tech CSE (AIML)</div>
+          <p class="km-hero-desc" data-i18n="hero_desc">
+            కృష్ణా డెల్టా మరియు ఆంధ్రప్రదేశ్ రైతుల కోసం రూపొందించిన ఆధునిక AI వ్యవసాయ నిర్ణయ వేదిక. మొబైల్ నెట్ తెగుళ్ల గుర్తింపు, లైవ్ విజయవాడ వాతావరణం, సమగ్ర నేల ఎరువుల లెక్కలు మరియు మార్కెట్ ధరలు ఒకే చోట.
+          </p>
+          <div class="km-badge-row">
+            <span class="km-chip">📍 <span id="hero-location">విజయవాడ (కృష్ణా జిల్లా)</span></span>
+            <span class="km-chip">🌾 <span id="hero-crop">వరి (Paddy BPT 5204)</span></span>
+            <span class="km-chip">📐 <span id="hero-acres">3.5 ఎకరాలు</span></span>
+            <span class="km-chip km-chip-gold" data-i18n="hero_instant_speed">⚡ 0ms తక్షణ వేగం</span>
+          </div>
+        </div>
+
+        <!-- Live Vijayawada Telemetry Tile -->
+        <div class="km-glass"
+          style="padding: 18px 22px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="font-size: 2.5rem;" id="home-weather-icon">⛅</div>
+            <div>
+              <div style="font-size: 0.82rem; color: #6ee7b7; font-weight: 700; text-transform: uppercase;"
+                data-i18n="home_weather_title">లైవ్ విజయవాడ వాతావరణం</div>
+              <div style="font-size: 1.6rem; font-weight: 800; color: #ffffff;" id="home-weather-temp">31.4°C</div>
+              <div style="font-size: 0.85rem; color: #cbd5e1;" id="home-weather-cond">పాక్షికంగా మేఘావృతం • తేమ: 68%
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="km-btn km-btn-secondary" onclick="showTab('weather')">
+              <span data-i18n="view_full_weather">పూర్తి వాతావరణం చూడండి</span> →
+            </button>
+          </div>
+        </div>
+
+        <!-- Core Features Grid -->
+        <div class="km-sec-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="3" y="3" width="7" height="7" />
+            <rect x="14" y="3" width="7" height="7" />
+            <rect x="14" y="14" width="7" height="7" />
+            <rect x="3" y="14" width="7" height="7" />
+          </svg>
+          <span data-i18n="core_features_title">ప్రధాన సేవలు</span>
+        </div>
+        <div class="km-sec-subtitle" data-i18n="core_features_sub">మీ పంట రక్షణ, నేల ఆరోగ్యం మరియు దిగుబడి కోసం ఆధునిక
+          డిజిటల్ ఉపకరణాలు:</div>
+
+        <div class="km-grid-3">
+          <div class="km-glass km-action-card" onclick="showTab('crop_health')">
+            <div class="km-card-icon-box">🌿</div>
+            <div class="km-card-title" data-i18n="card_scanner_title">పంట ఆరోగ్యం (తెగుళ్ల స్కానర్)</div>
+            <div class="km-card-text" data-i18n="card_scanner_desc">ఆకు ఫోటో తీసి అప్‌లోడ్ చేయండి. మొబైల్‌నెట్ AI
+              తక్షణమే తెగులును గుర్తించి సేంద్రీయ మరియు రసాయన నివారణలను సూచిస్తుంది.</div>
+            <button class="km-btn km-btn-block"><span data-i18n="btn_scan_now">ఆకును స్కాన్ చేయండి</span> ➜</button>
+          </div>
+
+          <div class="km-glass km-action-card" onclick="showTab('weather')">
+            <div class="km-card-icon-box">🌦️</div>
+            <div class="km-card-title" data-i18n="card_weather_title">వాతావరణం (విజయవాడ ప్రత్యక్ష సమాచారం)</div>
+            <div class="km-card-text" data-i18n="card_weather_desc">విజయవాడ, గుంటూరు మరియు ఏపీ జిల్లాల గంట గంట వర్షం,
+              ఉష్ణోగ్రత మరియు మందుల పిచికారీ అనుకూల సమయం.</div>
+            <button class="km-btn km-btn-block"><span data-i18n="btn_check_weather">వాతావరణం చూడండి</span> ➜</button>
+          </div>
+
+          <div class="km-glass km-action-card" onclick="showTab('soil')">
+            <div class="km-card-icon-box">🧪</div>
+            <div class="km-card-title" data-i18n="card_soil_title">నేల ఆరోగ్యం</div>
+            <div class="km-card-text" data-i18n="card_soil_desc">NPK విలువలను బట్టి మీ పంటకు సరిపోయే యూరియా, డీఏపీ,
+              ఎంఓపీ బస్తాల మోతాదు మరియు విడతల వారీ షెడ్యూల్.</div>
+            <button class="km-btn km-btn-block"><span data-i18n="btn_calc_soil">ఎరువులు లెక్కించండి</span> ➜</button>
+          </div>
+
+          <div class="km-glass km-action-card" onclick="showTab('rec')">
+            <div class="km-card-icon-box">🌾</div>
+            <div class="km-card-title" data-i18n="card_rec_title">పంట ఎంపిక సిఫార్సు</div>
+            <div class="km-card-text" data-i18n="card_rec_desc">మీ నేల స్వభావం, వర్షపాతం మరియు ఉష్ణోగ్రత ఆధారంగా అధిక
+              దిగుబడినిచ్చే అత్యుత్తమ పంటలను తెలుసుకోండి.</div>
+            <button class="km-btn km-btn-block"><span data-i18n="btn_get_rec">పంట సిఫార్సు పొందండి</span> ➜</button>
+          </div>
+
+          <div class="km-glass km-action-card" onclick="showTab('assistant')">
+            <div class="km-card-icon-box">🤖</div>
+            <div class="km-card-title" data-i18n="card_chat_title">ఎఐ సహాయకుడు (Chatbot)</div>
+            <div class="km-card-text" data-i18n="card_chat_desc">తెలుగు మరియు ఆంగ్లంలో 24/7 వ్యవసాయ ప్రశ్నలకు తక్షణ
+              శాస్త్రీయ సమాధానాలు, సలహాలు మరియు పథకాల వివరాలు.</div>
+            <button class="km-btn km-btn-block"><span data-i18n="btn_ask_ai">సందేహం అడగండి</span> ➜</button>
+          </div>
+
+          <div class="km-glass km-action-card" onclick="showTab('community')">
+            <div class="km-card-icon-box">👥</div>
+            <div class="km-card-title" data-i18n="card_community_title">రైతు సంభాషణ & వేదిక</div>
+            <div class="km-card-text" data-i18n="card_community_desc">కృష్ణా, గుంటూరు మరియు ఆంధ్రప్రదేశ్ తోటి రైతులతో
+              అనుభవాలు, మార్కెట్ ధరలు మరియు సలహాలు పంచుకోండి.</div>
+            <button class="km-btn km-btn-block"><span data-i18n="btn_open_community">రైతులతో మాట్లాడండి</span>
+              ➜</button>
+          </div>
+        </div>
+
+        <!-- Live Mandi Rates Section -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 32px; margin-bottom: 14px; flex-wrap: wrap; gap: 12px;">
+          <div class="km-sec-title" style="margin: 0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="1" x2="12" y2="23" />
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+            <span data-i18n="mandi_rates_title">ఆంధ్రప్రదేశ్ మార్కెట్ యార్డ్ లైవ్ ధరలు (Mandi Rates)</span>
+          </div>
+          <div id="mandi-count-label" style="background: rgba(16, 185, 129, 0.16); border: 1px solid rgba(52, 211, 153, 0.35); border-radius: 20px; padding: 4px 14px; font-size: 0.82rem; color: #6ee7b7; font-weight: 700;">
+            ప్రధాన పంటలు (Top 6 Crops)
+          </div>
+        </div>
+
+        <div id="mandi-rates-grid" class="km-grid-3">
+          <div class="km-glass" style="padding: 16px;">లోడ్ అవుతోంది...</div>
+        </div>
+
+        <!-- Show More / Show Less Button Container -->
+        <div style="display: flex; justify-content: center; margin-top: 18px; margin-bottom: 24px;">
+          <button id="btn-toggle-mandi-rates" class="km-btn" onclick="toggleMandiRates()" style="padding: 11px 26px; font-size: 0.94rem; border-radius: 14px; display: inline-flex; align-items: center; gap: 10px; cursor: pointer; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25);">
+            <svg id="mandi-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            <span id="mandi-btn-text" data-i18n="btn_show_more_mandi">మరిన్ని పంటల ధరలు చూడండి (Show All 15 Crops)</span>
+          </button>
+        </div>
+
+        <!-- Emergency Helpline Numbers -->
+        <div class="km-glass" style="padding: 20px; margin-top: 20px; border-color: rgba(245, 158, 11, 0.4);">
+          <div style="font-size: 1.15rem; font-weight: 700; color: #fbbf24; margin-bottom: 8px;">
+            📞 <span data-i18n="helpline_title">అత్యవసర రైతు సంప్రదింపు నంబర్లు (AP Government & KVK)</span>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.92rem; color: #f1f5f9;">
+            <div>🌾 <strong data-i18n="hl_kisan">కిసాన్ కాల్ సెంటర్:</strong> <a href="tel:155251"
+                style="color:#6ee7b7; text-decoration:none;">155251</a> / <a href="tel:18001801551"
+                style="color:#6ee7b7; text-decoration:none;">1800-180-1551</a> (<span data-i18n="hl_tollfree">టోల్ ఫ్రీ</span>)</div>
+            <div>🏛️ <strong data-i18n="hl_rbk">వైఎస్సార్ రైతు భరోసా కేంద్రం:</strong> <a href="tel:1902"
+                style="color:#6ee7b7; text-decoration:none;">1902</a></div>
+            <div>🔬 <strong data-i18n="hl_kvk">కృష్ణా జిల్లా కృషి విజ్ఞాన కేంద్రం:</strong> <a href="tel:08676252444"
+                style="color:#6ee7b7; text-decoration:none;">08676-252444</a></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 2. CROP HEALTH (DISEASE SCANNER) ================= -->
+      <section id="view-crop_health" class="km-view">
+        <div class="km-sec-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10" />
+            <path d="m4.93 4.93 4.24 4.24" />
+            <path d="m14.83 9.17 4.24-4.24" />
+          </svg>
+          <span data-i18n="scanner_header">పంట ఆరోగ్యం (తెగుళ్ల స్కానర్)</span>
+        </div>
+        <div class="km-sec-subtitle" data-i18n="scanner_sub">ఆకుపై మచ్చలు, రంగు మార్పు లేదా తెగులు ఉన్న భాగాన్ని ఫోటో
+          తీసి అప్‌లోడ్ చేయండి:</div>
+
+        <div class="km-grid-2">
+          <div class="km-glass" style="padding: 24px;">
+            <div class="km-dropzone" onclick="document.getElementById('leaf-file-input').click()">
+              <input type="file" id="leaf-file-input" accept="image/*" style="display: none;"
+                onchange="handleLeafSelect(event)">
+              <div style="font-size: 3rem; margin-bottom: 10px;">📸</div>
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff;" data-i18n="upload_prompt">ఫోటో ఎంచుకోండి
+                లేదా కెమెరాతో తీయండి</div>
+              <div style="font-size: 0.85rem; color: #94a3b8; margin-top: 6px;" data-i18n="upload_hint">JPG, PNG లేదా WEBP ఫార్మాట్ (గరిష్టం 10 MB)</div>
+            </div>
+
+            <div id="scanner-preview-box" style="display: none; margin-top: 20px; text-align: center;">
+              <img id="leaf-preview-img" src="" alt="Selected leaf"
+                style="max-height: 240px; border-radius: 12px; border: 1px solid var(--km-border); object-fit: contain;">
+              <div style="margin-top: 14px;">
+                <button class="km-btn km-btn-block" id="btn-analyze-leaf" onclick="analyzeLeafImage()">
+                  ⚡ <span data-i18n="btn_start_analysis">AI తెగుళ్ల విశ్లేషణ ప్రారంభించండి</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="km-glass" id="scanner-result-box"
+            style="padding: 24px; display: flex; flex-direction: column; justify-content: center; min-height: 320px;">
+            <div id="scanner-empty-state" style="text-align: center; color: #94a3b8;">
+              <div style="font-size: 2.5rem; margin-bottom: 8px;">🔬</div>
+              <div style="font-size: 1.05rem; font-weight: 600;" data-i18n="scanner_waiting">ఫోటో అప్‌లోడ్ చేసి విశ్లేషణ
+                బటన్ నొక్కండి</div>
+              <p style="font-size: 0.85rem; color: #64748b; margin-top: 6px;" data-i18n="scanner_hint">మొబైల్‌నెట్ AI మోడల్ 38 రకాల పంట వ్యాధులను మరియు ఆరోగ్యకరమైన ఆకులను తక్షణమే గుర్తిస్తుంది.</p>
+            </div>
+
+            <div id="scanner-loading" style="display: none; text-align: center;">
+              <div style="font-size: 2.5rem; animation: spin 1s infinite linear;">⚙️</div>
+              <div style="font-size: 1.1rem; font-weight: 700; color: #6ee7b7; margin-top: 10px;" data-i18n="analyzing">
+                చిత్రాన్ని విశ్లేషిస్తోంది... దయచేసి వేచి ఉండండి</div>
+            </div>
+
+            <div id="scanner-result-content" style="display: none;"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 3. WEATHER (VIJAYAWADA TELEMETRY) ================= -->
+      <section id="view-weather" class="km-view">
+        <div class="km-sec-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+          </svg>
+          <span data-i18n="weather_header">వాతావరణం (విజయవాడ ప్రత్యక్ష సమాచారం)</span>
+        </div>
+        <div class="km-sec-subtitle" data-i18n="weather_sub">కృష్ణా డెల్టా మరియు ఏపీ జిల్లాల ఖచ్చితమైన వాతావరణ నివేదిక:
+        </div>
+
+        <div class="km-glass"
+          style="padding: 20px; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
+          <label style="font-weight: 700; color: #6ee7b7;" data-i18n="select_district">జిల్లా / ప్రాంతాన్ని
+            ఎంచుకోండి:</label>
+          <select id="weather-district-select" class="km-input" style="max-width: 280px;"
+            onchange="loadWeatherForDistrict(this.value)">
+            <option value="Vijayawada (Krishna)">విజయవాడ (కృష్ణా)</option>
+            <option value="Guntur">గుంటూరు</option>
+            <option value="Machilipatnam">మచిలీపట్నం</option>
+            <option value="Eluru">ఏలూరు</option>
+            <option value="Rajahmundry">రాజమండ్రి</option>
+            <option value="Kakinada">కాకినాడ</option>
+            <option value="Nellore">నెల్లూరు</option>
+            <option value="Kurnool">కర్నూలు</option>
+            <option value="Anantapur">అనంతపురం</option>
+            <option value="Tirupati">తిరుపతి</option>
+            <option value="Visakhapatnam">విశాఖపట్నం</option>
+          </select>
+          <button class="km-btn km-btn-secondary"
+            onclick="loadWeatherForDistrict(document.getElementById('weather-district-select').value)">
+            🔄 <span data-i18n="refresh">తాజాకరించు</span>
+          </button>
+        </div>
+
+        <div class="km-grid-4" id="weather-current-metrics">
+          <div class="km-glass" style="padding: 20px; text-align: center;">
+            <div style="font-size: 0.82rem; color: #94a3b8; font-weight: 700;" data-i18n="metric_temp">ఉష్ణోగ్రత</div>
+            <div style="font-size: 2rem; font-weight: 800; color: #ffffff;" id="metric-temp">31.4°C</div>
+            <div style="font-size: 0.8rem; color: #6ee7b7;" id="metric-feels">అనిపిస్తున్నది: 34.0°C</div>
+          </div>
+          <div class="km-glass" style="padding: 20px; text-align: center;">
+            <div style="font-size: 0.82rem; color: #94a3b8; font-weight: 700;" data-i18n="metric_humidity">గాలిలో తేమ
+              (Humidity)</div>
+            <div style="font-size: 2rem; font-weight: 800; color: #ffffff;" id="metric-humidity">68%</div>
+            <div style="font-size: 0.8rem; color: #34d399;" data-i18n="metric_optimal">పంటలకు అనుకూలం</div>
+          </div>
+          <div class="km-glass" style="padding: 20px; text-align: center;">
+            <div style="font-size: 0.82rem; color: #94a3b8; font-weight: 700;" data-i18n="metric_wind">గాలి వేగం</div>
+            <div style="font-size: 2rem; font-weight: 800; color: #ffffff;" id="metric-wind">14.2 km/h</div>
+            <div style="font-size: 0.8rem; color: #94a3b8;" data-i18n="wind_dir_east">తూర్పు దిశ</div>
+          </div>
+          <div class="km-glass" style="padding: 20px; text-align: center;">
+            <div style="font-size: 0.82rem; color: #94a3b8; font-weight: 700;" data-i18n="metric_rain">వర్షపాతం అవకాశం
+            </div>
+            <div style="font-size: 2rem; font-weight: 800; color: #ffffff;" id="metric-rain">10%</div>
+            <div style="font-size: 0.8rem; color: #6ee7b7;" data-i18n="rain_low">వర్షం సూచన లేదు</div>
+          </div>
+        </div>
+
+        <div class="km-glass" id="weather-spray-advisory"
+          style="padding: 22px; margin-bottom: 24px; border-left: 6px solid #10b981;">
+          <div style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin-bottom: 6px;">
+            🌿 <span data-i18n="spray_advisory_title">రైతు పిచికారీ అనుకూల సూచిక (Spraying Window)</span>
+          </div>
+          <div style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.6;" id="spray-advisory-text">
+            ప్రస్తుత విజయవాడ వాతావరణం మందుల పిచికారీకి <strong style="color:#6ee7b7;">చాలా అనుకూలంగా ఉంది</strong>.
+          </div>
+        </div>
+
+        <div class="km-sec-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+          <span data-i18n="forecast_title">రాబోయే 5 రోజుల సూచన</span>
+        </div>
+        <div class="km-grid-4" id="weather-forecast-grid" style="grid-template-columns: repeat(5, 1fr);"></div>
+      </section>
+
+      <!-- ================= 4. SOIL HEALTH ================= -->
+      <section id="view-soil" class="km-view">
+        <div class="km-sec-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path
+              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+          </svg>
+          <span data-i18n="soil_header">నేల ఆరోగ్యం</span>
+        </div>
+        <div class="km-sec-subtitle" data-i18n="soil_sub">మీ భూమి సాయిల్ టెస్ట్ రిపోర్ట్ (NPK) ఆధారంగా సమగ్ర ఎరువుల
+          విడతల మోతాదు:</div>
+
+        <div class="km-grid-2">
+          <div class="km-glass" style="padding: 24px;">
+            <div style="margin-bottom: 16px;">
+              <label style="display: block; font-weight: 700; margin-bottom: 6px;" data-i18n="label_crop">పంటను
+                ఎంచుకోండి:</label>
+              <select id="soil-crop-select" class="km-input" style="width: 100%;">
+                <option value="Paddy">వరి (Paddy / Rice)</option>
+                <option value="Chilli">మిర్చి (Chilli)</option>
+                <option value="Cotton">పత్తి (Cotton)</option>
+                <option value="Maize">మొక్కజొన్న (Maize)</option>
+                <option value="Groundnut">వేరుశనగ (Groundnut)</option>
+                <option value="Sugarcane">చెరకు (Sugarcane)</option>
+                <option value="Turmeric">పసుపు (Turmeric)</option>
+                <option value="Blackgram">మినుము (Blackgram)</option>
+                <option value="Greengram">పెసర (Greengram)</option>
+                <option value="Redgram">కందులు (Redgram)</option>
+                <option value="Banana">అరటి (Banana)</option>
+                <option value="Mango">మామిడి (Mango)</option>
+                <option value="Tomato">టమోటా (Tomato)</option>
+                <option value="Tobacco">పొగాకు (Tobacco)</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 16px;">
+              <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.9rem;">
+                <span data-i18n="lbl_ph">నేల pH:</span>
+                <span id="val-ph" style="color: #6ee7b7; font-weight: 800;">6.8</span>
+              </div>
+              <input type="range" id="input-ph" min="4.0" max="9.5" step="0.1" value="6.8"
+                style="width:100%; accent-color:#10b981;"
+                oninput="document.getElementById('val-ph').innerText = this.value">
+            </div>
+
+            <div style="margin-bottom: 16px;">
+              <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.9rem;">
+                <span data-i18n="lbl_n">నత్రజని (Nitrogen - N) kg/హెక్టార్:</span>
+                <span id="val-n" style="color: #6ee7b7; font-weight: 800;">180</span>
+              </div>
+              <input type="range" id="input-n" min="50" max="450" step="5" value="180"
+                style="width:100%; accent-color:#10b981;"
+                oninput="document.getElementById('val-n').innerText = this.value">
+            </div>
+
+            <div style="margin-bottom: 16px;">
+              <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.9rem;">
+                <span data-i18n="lbl_p">భాస్వరం (Phosphorus - P) kg/హెక్టార్:</span>
+                <span id="val-p" style="color: #6ee7b7; font-weight: 800;">22</span>
+              </div>
+              <input type="range" id="input-p" min="5" max="90" step="1" value="22"
+                style="width:100%; accent-color:#10b981;"
+                oninput="document.getElementById('val-p').innerText = this.value">
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.9rem;">
+                <span data-i18n="lbl_k">పొటాషియం (Potassium - K) kg/హెక్టార్:</span>
+                <span id="val-k" style="color: #6ee7b7; font-weight: 800;">140</span>
+              </div>
+              <input type="range" id="input-k" min="50" max="450" step="5" value="140"
+                style="width:100%; accent-color:#10b981;"
+                oninput="document.getElementById('val-k').innerText = this.value">
+            </div>
+
+            <button class="km-btn km-btn-block" onclick="calculateSoilFertilizers()">
+              🧪 <span data-i18n="btn_calculate_split">ఎరువుల మోతాదును విశ్లేషించండి</span>
+            </button>
+          </div>
+
+          <div class="km-glass" id="soil-output-card" style="padding: 24px;">
+            <div style="font-size: 1.2rem; font-weight: 800; color: #ffffff; margin-bottom: 14px;"
+              data-i18n="soil_rec_title">
+              📋 ఎకరానికి సిఫార్సు చేయబడిన ఎరువులు
+            </div>
+            <div id="soil-fert-result"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 5. CROP RECOMMENDATION ================= -->
+      <section id="view-rec" class="km-view">
+        <div class="km-sec-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
+          <span data-i18n="rec_header">పంట ఎంపిక సిఫార్సు</span>
+        </div>
+        <div class="km-sec-subtitle" data-i18n="rec_sub">రైతు నేల మరియు స్థానిక వాతావరణ పరిస్థితుల ఆధారంగా అత్యంత
+          లాభదాయక పంటను లెక్కించండి:</div>
+
+        <div class="km-grid-2">
+          <div class="km-glass" style="padding: 24px;">
+            <div class="km-grid-2" style="margin-bottom: 0;">
+              <div>
+                <label style="font-size:0.85rem; font-weight:700; color:#cbd5e1;">N (kg/ha):</label>
+                <input type="number" id="rec-n" class="km-input" value="90" style="margin-top:4px;">
+              </div>
+              <div>
+                <label style="font-size:0.85rem; font-weight:700; color:#cbd5e1;">P (kg/ha):</label>
+                <input type="number" id="rec-p" class="km-input" value="42" style="margin-top:4px;">
+              </div>
+              <div>
+                <label style="font-size:0.85rem; font-weight:700; color:#cbd5e1;">K (kg/ha):</label>
+                <input type="number" id="rec-k" class="km-input" value="43" style="margin-top:4px;">
+              </div>
+              <div>
+                <label style="font-size:0.85rem; font-weight:700; color:#cbd5e1;">pH:</label>
+                <input type="number" id="rec-ph" class="km-input" step="0.1" value="6.5" style="margin-top:4px;">
+              </div>
+              <div>
+                <label style="font-size:0.85rem; font-weight:700; color:#cbd5e1;" data-i18n="lbl_temp_c">ఉష్ణోగ్రత (°C):</label>
+                <input type="number" id="rec-temp" class="km-input" step="0.1" value="28.5" style="margin-top:4px;">
+              </div>
+              <div>
+                <label style="font-size:0.85rem; font-weight:700; color:#cbd5e1;" data-i18n="lbl_humidity_pct">తేమ (%):</label>
+                <input type="number" id="rec-hum" class="km-input" value="75" style="margin-top:4px;">
+              </div>
+            </div>
+            <div style="margin-top: 14px;">
+              <label style="font-size:0.85rem; font-weight:700; color:#cbd5e1;" data-i18n="lbl_rainfall">వార్షిక వర్షపాతం (Rainfall mm):</label>
+              <input type="number" id="rec-rain" class="km-input" value="950" style="margin-top:4px; width:100%;">
+            </div>
+            <div style="margin-top: 20px;">
+              <button class="km-btn km-btn-block" onclick="runCropRecommendation()">
+                🌾 <span data-i18n="btn_run_rec">సిఫార్సు చేయబడిన పంటను లెక్కించండి</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="km-glass" id="rec-result-box"
+            style="padding: 24px; display:flex; flex-direction:column; justify-content:center;">
+            <div id="rec-empty-state" style="text-align: center; color: #94a3b8;">
+              <div style="font-size: 2.5rem; margin-bottom: 8px;">🌱</div>
+              <div style="font-weight: 700; font-size: 1.05rem;" data-i18n="rec_waiting">విలువలను నమోదు చేసి బటన్
+                నొక్కండి</div>
+              <p style="font-size: 0.85rem; color: #64748b; margin-top: 6px;" data-i18n="rec_hint">మెషిన్ లెర్నింగ్ మోడల్ మీ నేల మరియు వాతావరణానికి అనువైన టాప్ పంటలను సిఫార్సు చేస్తుంది.</p>
+            </div>
+            <div id="rec-output-content" style="display: none;"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 6. FARMER CONNECT & CHAT ================= -->
+      <section id="view-community" class="km-view">
+        <div class="km-sec-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          <span data-i18n="comm_header">రైతు సంభాషణ & వేదిక (Farmer Connect & Forum)</span>
+        </div>
+        <div class="km-sec-subtitle" data-i18n="comm_sub">ఆంధ్రప్రదేశ్ కృష్ణా, గుంటూరు, గోదావరి జిల్లాల తోటి రైతులతో అనుభవాలు, మార్కెట్ ధరలు మరియు తెగుళ్ల నివారణపై ప్రత్యక్ష చర్చ:</div>
+
+        <div class="km-grid-2">
+          <!-- Left Column: Community Forum Feed -->
+          <div>
+            <!-- Create New Post Box -->
+            <div class="km-glass" style="padding: 20px; margin-bottom: 20px; border-radius: 16px;">
+              <div style="font-weight: 800; color: #6ee7b7; font-size: 1.05rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                <span>📢</span>
+                <span data-i18n="create_post_title">రైతు వేదికపై కొత్త సమాచారం లేదా ప్రశ్న పోస్ట్ చేయండి:</span>
+              </div>
+              
+              <div style="display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap;">
+                <select id="post-category-select" class="km-input" style="flex: 1; min-width: 160px; padding: 8px 12px; font-size: 0.85rem;">
+                  <option value="తెగుళ్ల నివారణ" data-i18n="opt_pest">🛡️ తెగుళ్ల నివారణ (Pest & Disease)</option>
+                  <option value="మార్కెట్ ధరలు" data-i18n="opt_market">💰 మార్కెట్ ధరలు (Market Rates)</option>
+                  <option value="ఎరువుల యాజమాన్యం" data-i18n="opt_fert">🧪 ఎరువుల యాజమాన్యం (Fertilizers)</option>
+                  <option value="విత్తనాలు & మార్కెట్" data-i18n="opt_seeds">🌱 విత్తనాలు (Seeds)</option>
+                  <option value="సాధారణ చర్చ" data-i18n="opt_general" selected>🌾 సాధారణ చర్చ (General)</option>
+                </select>
+              </div>
+
+              <input type="text" id="post-title-input" class="km-input"
+                placeholder="శీర్షిక (ఉదా: విజయవాడ మార్కెట్లో తేజా మిర్చి ధరలు ఎలా ఉన్నాయి?)..." style="width: 100%; margin-bottom: 10px;">
+              <textarea id="post-body-input" class="km-input" placeholder="మీ క్షేత్రస్థాయి అనుభవం లేదా ప్రశ్నను ఇక్కడ వివరంగా రాయండి..."
+                style="width: 100%; height: 85px; margin-bottom: 12px; resize: none;"></textarea>
+              
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.8rem; color: #94a3b8;" data-i18n="post_author_hint">👨‍🌾 మీ పేరుతో నేరుగా ప్రచురించబడుతుంది</span>
+                <button class="km-btn" onclick="submitCommunityPost()" style="padding: 8px 18px;">
+                  ✍️ <span data-i18n="btn_post">పోస్ట్ చేయండి</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Forum Category Filter Chips -->
+            <div style="display: flex; gap: 8px; margin-bottom: 14px; overflow-x: auto; padding-bottom: 4px;" id="forum-filter-chips">
+              <button class="km-chip-btn active" onclick="filterForumPosts('all', this)" data-i18n="filter_all">అన్నీ (All)</button>
+              <button class="km-chip-btn" onclick="filterForumPosts('తెగుళ్ల నివారణ', this)" data-i18n="filter_pests">🛡️ తెగుళ్లు</button>
+              <button class="km-chip-btn" onclick="filterForumPosts('మార్కెట్ ధరలు', this)" data-i18n="filter_market">💰 మార్కెట్</button>
+              <button class="km-chip-btn" onclick="filterForumPosts('ఎరువుల యాజమాన్యం', this)" data-i18n="filter_fert">🧪 ఎరువులు</button>
+              <button class="km-chip-btn" onclick="filterForumPosts('విత్తనాలు & మార్కెట్', this)" data-i18n="filter_seeds">🌱 విత్తనాలు</button>
+            </div>
+
+            <!-- Posts Feed Container -->
+            <div id="community-posts-feed" style="display: flex; flex-direction: column; gap: 16px;"></div>
+          </div>
+
+          <!-- Right Column: Direct 1-on-1 Farmer WhatsApp-style Chat -->
+          <div class="km-glass" style="padding: 20px; display: flex; flex-direction: column; height: 680px; border-radius: 16px; position: sticky; top: 20px;">
+            <!-- Chat Header -->
+            <div style="padding-bottom: 12px; margin-bottom: 10px; border-bottom: 1px solid var(--km-border); display: flex; justify-content: space-between; align-items: center;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div id="direct-chat-avatar" style="width: 42px; height: 42px; border-radius: 50%; background: rgba(16, 185, 129, 0.2); border: 1.5px solid #34d399; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
+                  👩‍🌾
+                </div>
+                <div>
+                  <div id="direct-chat-contact-name" style="font-weight: 800; font-size: 1.05rem; color: #ffffff; line-height: 1.2;">Shiney</div>
+                  <div id="direct-chat-contact-meta" style="font-size: 0.76rem; color: #6ee7b7;">గుంటూరు • తేజా మిర్చి రైతు</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(52, 211, 153, 0.3); padding: 4px 10px; border-radius: 20px;">
+                <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #34d399; box-shadow: 0 0 8px #34d399;"></span>
+                <span id="direct-chat-online-label" style="font-size: 0.75rem; color: #6ee7b7; font-weight: 700;">ఆన్‌లైన్ (Online)</span>
+              </div>
+            </div>
+
+            <!-- Contact Switcher Carousel -->
+            <div style="display: flex; gap: 8px; margin-bottom: 12px; overflow-x: auto; padding-bottom: 4px;" id="direct-chat-contacts">
+              <!-- Dynamically rendered or updated via JS -->
+            </div>
+
+            <!-- Messages Window -->
+            <div id="direct-messages-box"
+              style="flex-grow: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding: 12px; background: rgba(2, 18, 11, 0.6); border: 1px solid rgba(52, 211, 153, 0.15); border-radius: 12px;">
+            </div>
+
+            <!-- Typing indicator -->
+            <div id="farmer-typing-indicator" style="display: none; font-size: 0.8rem; color: #6ee7b7; padding: 4px 12px; margin-top: 4px;">
+              <span id="farmer-typing-text" style="display: inline-block; animation: kmPulse 1s infinite;">✍️ రైతు సమాధానం టైప్ చేస్తున్నారు...</span>
+            </div>
+
+            <!-- Quick Inquiry Suggestions -->
+            <div style="display: flex; gap: 6px; overflow-x: auto; padding: 8px 0; margin-top: 4px;" id="direct-quick-prompts">
+              <!-- Dynamically rendered via renderDirectQuickPrompts() -->
+            </div>
+
+            <!-- Message Input Bar -->
+            <div style="display: flex; gap: 8px; margin-top: 8px;">
+              <input type="text" id="direct-chat-input" class="km-input" placeholder="తోటి రైతుకు సందేశం పంపండి..."
+                onkeypress="if(event.key === 'Enter') sendDirectMessage()">
+              <button class="km-btn" onclick="sendDirectMessage()" style="padding: 10px 18px; flex-shrink: 0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+                <span data-i18n="btn_direct_send">పంపండి</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 7. AI ASSISTANT (AI AGRO ASSISTANT) ================= -->
+      <section id="view-assistant" class="km-view">
+        <div class="km-sec-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+          <span data-i18n="chat_header">ఎఐ సహాయకుడు (Chatbot)</span>
+        </div>
+        <div class="km-sec-subtitle" data-i18n="chat_sub">వ్యవసాయ శాస్త్రవేత్తల పరిశోధన ఆధారిత జ్ఞానంతో తెలుగు మరియు
+          ఆంగ్లంలో సమాధానాలు:</div>
+
+        <div class="km-glass km-chat-box">
+          <div class="km-chat-messages" id="chat-messages-container">
+            <div class="km-chat-bubble km-bubble-bot" id="chat-welcome-bubble">
+              <strong>🌾 KrishiMitra AI:</strong><br>
+              <span id="chat-welcome-text">నమస్కారం! నేను కృషిమిత్ర AI సహాయకుడిని (డెవలపర్లు: ఆకర్ష అర్చన & షైనీ - B.Tech CSE AIML). మీ పంట తెగుళ్లు, ఎరువుల మోతాదు, వాతావరణం లేదా ప్రభుత్వ పథకాల గురించి ఏ ప్రశ్నైనా నన్ను అడగవచ్చు.</span>
+            </div>
+          </div>
+
+          <div class="km-chat-chips" id="assistant-chips-container">
+            <!-- Dynamically populated in applyLanguage() -->
+          </div>
+
+          <div class="km-chat-input-bar">
+            <input type="text" id="chat-input" class="km-input" placeholder="మీ వ్యవసాయ సందేహాన్ని ఇక్కడ టైప్ చేయండి..."
+              onkeypress="if(event.key === 'Enter') handleChatSend()">
+            <button class="km-btn" onclick="handleChatSend()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+              <span data-i18n="btn_send">పంపండి</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 8. FARMER PROFILE ================= -->
+      <section id="view-profile" class="km-view">
+        <div class="km-sec-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          <span data-i18n="profile_header">రైతు ప్రొఫైల్</span>
+        </div>
+        <div class="km-sec-subtitle" data-i18n="profile_sub">మీ వ్యక్తిగత వివరాలు, క్షేత్ర సమాచారం మరియు సాగు వివరాల నిర్వహణ:</div>
+
+        <!-- 1. Top Farmer Digital Identity Banner -->
+        <div class="km-glass" style="padding: 22px 26px; margin-bottom: 22px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.18) 0%, rgba(6, 40, 28, 0.9) 100%); border: 1.5px solid rgba(52, 211, 153, 0.4); border-radius: 20px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+            <div style="display: flex; align-items: center; gap: 18px;">
+              <div style="font-size: 3.2rem; background: rgba(16, 185, 129, 0.25); border: 2px solid #34d399; width: 80px; height: 80px; border-radius: 22px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);" id="profile-avatar-display">
+                👩‍🌾
+              </div>
+              <div>
+                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                  <span style="font-size: 1.8rem; font-weight: 800; color: #ffffff;" id="profile-name-display">Archana</span>
+                  <span style="background: rgba(16, 185, 129, 0.3); color: #34d399; font-size: 0.76rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; border: 1px solid #34d399;" data-i18n="verified_farmer">
+                    ✓ ప్రామాణీకరించబడిన రైతు
+                  </span>
+                </div>
+                <div style="font-size: 0.88rem; color: #6ee7b7; font-weight: 600; margin-top: 3px;">
+                  📱 <span id="profile-phone-display">9440123456</span> • 🆔 <span id="profile-id-display">KM-AGRI-2026-8941</span>
+                </div>
+                <div style="font-size: 0.78rem; color: #a7f3d0; margin-top: 4px;" data-i18n="prof_student_credit">
+                  👩‍💻 ఆకర్ష అర్చన & షైనీ (B.Tech CSE AIML)
+                </div>
+              </div>
+            </div>
+
+            <!-- Edit Profile Button -->
+            <div>
+              <button class="km-btn" id="btn-toggle-edit-profile" onclick="toggleProfileEdit()" style="padding: 10px 18px; font-size: 0.92rem; border-radius: 12px; display: flex; align-items: center; gap: 8px;">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+                <span data-i18n="btn_edit_profile">ప్రొఫైల్ సవరించండి (Edit Profile)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Four Quick Agro-Metrics -->
+        <div class="km-grid-4" style="margin-bottom: 22px;">
+          <div class="km-metric-card">
+            <div class="km-metric-label">🌾 <span data-i18n="lbl_acres">వ్యవసాయ భూమి</span></div>
+            <div class="km-metric-value" id="profile-metric-acres" style="color: #6ee7b7;">3.5 ఎకరాలు</div>
+            <div class="km-metric-sub" data-i18n="prof_sub_holding">కృష్ణా డెల్టా వ్యవసాయ హోల్డింగ్</div>
+          </div>
+          <div class="km-metric-card">
+            <div class="km-metric-label">🌱 <span data-i18n="lbl_primary_crop">ప్రధాన పంట</span></div>
+            <div class="km-metric-value" id="profile-metric-crop" style="color: #34d399;">వరి (Paddy)</div>
+            <div class="km-metric-sub" data-i18n="prof_sub_variety">BPT 5204 సాంబా మసూరి</div>
+          </div>
+          <div class="km-metric-card">
+            <div class="km-metric-label">📍 <span data-i18n="lbl_location">ప్రాంతం</span></div>
+            <div class="km-metric-value" id="profile-metric-district" style="font-size: 1.25rem; color: #ffffff;">Vijayawada</div>
+            <div class="km-metric-sub" id="profile-metric-village">ఏనికపాడు గ్రామం</div>
+          </div>
+          <div class="km-metric-card">
+            <div class="km-metric-label">💧 <span data-i18n="lbl_irrigation">సాగునీటి విధానం</span></div>
+            <div class="km-metric-value" style="font-size: 1.15rem; color: #38bdf8;" data-i18n="irrigation_val">కాలువ & బోరు బావి</div>
+            <div class="km-metric-sub" data-i18n="prof_sub_canal">కృష్ణా తూర్పు ప్రధాన కాలువ</div>
+          </div>
+        </div>
+
+        <!-- 3. VIEW MODE: Full Farm Details Overview Card -->
+        <div id="profile-view-mode" class="km-glass" style="padding: 24px; border-radius: 18px; margin-bottom: 24px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; border-bottom: 1px solid rgba(52, 211, 153, 0.2); padding-bottom: 12px;">
+            <div style="font-size: 1.15rem; font-weight: 800; color: #ffffff;" data-i18n="prof_spec_title">
+              📋 క్షేత్ర & రైతు వివరాల నివేదిక (Farm Specifications)
+            </div>
+            <span style="font-size: 0.8rem; color: #6ee7b7; font-weight: 600;" data-i18n="prof_reg_season">నమోదు: నవంబర్ 2026 (ఖరీఫ్ సీజన్)</span>
+          </div>
+
+          <div class="km-grid-2" style="gap: 18px;">
+            <div style="background: rgba(0, 0, 0, 0.22); border: 1px solid rgba(52, 211, 153, 0.18); border-radius: 14px; padding: 18px; line-height: 2;">
+              <div style="font-size: 0.95rem; font-weight: 700; color: #6ee7b7; margin-bottom: 6px; border-bottom: 1px solid rgba(52, 211, 153, 0.15); padding-bottom: 4px;" data-i18n="prof_personal_sec">
+                👤 రైతు వ్యక్తిగత సమాచారం:
+              </div>
+              <div><strong data-i18n="lbl_farmer_name">రైతు పేరు:</strong> <span id="profile-detail-name" style="color: #ffffff;">Archana</span></div>
+              <div><strong data-i18n="lbl_registered_phone">నమోదిత ఫోన్:</strong> <span id="profile-detail-phone" style="color: #ffffff;">9440123456</span></div>
+              <div><strong data-i18n="lbl_district">జిల్లా:</strong> <span id="profile-detail-district" style="color: #ffffff;">Vijayawada (Krishna)</span></div>
+              <div><strong data-i18n="lbl_village_mandal">గ్రామం / మండలం:</strong> <span id="profile-detail-village" style="color: #ffffff;">ఏనికపాడు (Enikepadu), విజయవాడ రూరల్</span></div>
+            </div>
+
+            <div style="background: rgba(0, 0, 0, 0.22); border: 1px solid rgba(52, 211, 153, 0.18); border-radius: 14px; padding: 18px; line-height: 2;">
+              <div style="font-size: 0.95rem; font-weight: 700; color: #6ee7b7; margin-bottom: 6px; border-bottom: 1px solid rgba(52, 211, 153, 0.15); padding-bottom: 4px;" data-i18n="prof_crop_land_sec">
+                🚜 పంట & భూమి వివరాలు:
+              </div>
+              <div><strong data-i18n="lbl_primary_crop">ప్రధాన పంట:</strong> <span id="profile-detail-crop" style="color: #ffffff;">వరి (Paddy BPT 5204)</span></div>
+              <div><strong data-i18n="lbl_land_holding">భూమి విస్తీర్ణం:</strong> <span id="profile-detail-acres" style="color: #ffffff;">3.5 ఎకరాలు</span></div>
+              <div><strong data-i18n="lbl_soil_nature">నేల స్వభావం:</strong> <span style="color: #a7f3d0;" data-i18n="soil_type_val">సారవంతమైన డెల్టా ఒండ్రు నేల</span></div>
+              <div><strong data-i18n="lbl_welfare_scheme">రైతు సంక్షేమ పథకం:</strong> <span style="color: #fbbf24;" data-i18n="scheme_val">వైఎస్సార్ రైతు భరోసా, పీఎం కిసాన్ సమ్మాన్ నిధి</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. EDIT MODE: Interactive Farmer Profile Edit Form (Hidden by default, shown when Edit is clicked) -->
+        <div id="profile-edit-mode" class="km-glass" style="display: none; padding: 26px; border-radius: 18px; margin-bottom: 24px; border: 1.5px solid #34d399; background: linear-gradient(145deg, rgba(4, 28, 18, 0.95) 0%, rgba(9, 50, 34, 0.9) 100%);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; border-bottom: 1px solid rgba(52, 211, 153, 0.25); padding-bottom: 12px;">
+            <div style="font-size: 1.25rem; font-weight: 800; color: #34d399;" data-i18n="edit_profile_title">
+              ✏️ రైతు ప్రొఫైల్ వివరాల సవరణ (Edit Farm Profile)
+            </div>
+            <button class="km-btn km-btn-secondary" onclick="toggleProfileEdit(false)" style="padding: 4px 10px; font-size: 0.8rem;" data-i18n="btn_cancel_short">
+              ✕ రద్దు (Cancel)
+            </button>
+          </div>
+
+          <div class="km-grid-2" style="gap: 16px; margin-bottom: 20px;">
+            <div>
+              <label style="font-size: 0.86rem; font-weight: 700; color: #cbd5e1;" data-i18n="lbl_edit_name">పూర్తి పేరు (Farmer Full Name):</label>
+              <input type="text" id="edit-name" class="km-input" style="width: 100%; margin-top: 5px; padding: 10px 14px;">
+            </div>
+
+            <div>
+              <label style="font-size: 0.86rem; font-weight: 700; color: #cbd5e1;" data-i18n="lbl_edit_phone">మొబైల్ ఖాతా (Mobile Number):</label>
+              <input type="text" id="edit-phone" class="km-input" style="width: 100%; margin-top: 5px; padding: 10px 14px;">
+            </div>
+
+            <div>
+              <label style="font-size: 0.86rem; font-weight: 700; color: #cbd5e1;" data-i18n="lbl_edit_district">జిల్లా (District):</label>
+              <select id="edit-district" class="km-input" style="width: 100%; margin-top: 5px; padding: 10px 14px;">
+                <option value="Vijayawada (Krishna)">Vijayawada (Krishna)</option>
+                <option value="Guntur">Guntur</option>
+                <option value="Amaravati">Amaravati</option>
+                <option value="Eluru">Eluru</option>
+                <option value="West Godavari">West Godavari</option>
+                <option value="East Godavari">East Godavari</option>
+                <option value="Kurnool">Kurnool</option>
+                <option value="Anantapur">Anantapur</option>
+                <option value="Chittoor">Chittoor</option>
+                <option value="Kadapa">Kadapa</option>
+                <option value="Nellore">Nellore</option>
+                <option value="Prakasam">Prakasam</option>
+                <option value="Visakhapatnam">Visakhapatnam</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 0.86rem; font-weight: 700; color: #cbd5e1;" data-i18n="lbl_edit_village">గ్రామం / మండలం (Village / Mandal):</label>
+              <input type="text" id="edit-village" class="km-input" style="width: 100%; margin-top: 5px; padding: 10px 14px;">
+            </div>
+
+            <div>
+              <label style="font-size: 0.86rem; font-weight: 700; color: #cbd5e1;" data-i18n="lbl_edit_crop">ప్రధాన పంట (Primary Crop):</label>
+              <select id="edit-crop" class="km-input" style="width: 100%; margin-top: 5px; padding: 10px 14px;">
+                <option value="Paddy">వరి (Paddy)</option>
+                <option value="Chilli">మిర్చి (Chilli)</option>
+                <option value="Cotton">పత్తి (Cotton)</option>
+                <option value="Maize">మొక్కజొన్న (Maize)</option>
+                <option value="Groundnut">వేరుశనగ (Groundnut)</option>
+                <option value="Sugarcane">చెరకు (Sugarcane)</option>
+                <option value="Blackgram">మినుములు (Blackgram)</option>
+                <option value="Tomato">టమాటా (Tomato)</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 0.86rem; font-weight: 700; color: #cbd5e1;" data-i18n="lbl_edit_acres">వ్యవసాయ భూమి విస్తీర్ణం - ఎకరాల్లో (Land Size in Acres):</label>
+              <input type="number" id="edit-acres" class="km-input" step="0.5" min="0.25" max="500" style="width: 100%; margin-top: 5px; padding: 10px 14px;">
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; justify-content: flex-end;">
+            <button class="km-btn km-btn-secondary" onclick="toggleProfileEdit(false)" style="padding: 10px 20px;">
+              <span data-i18n="btn_cancel_edit">రద్దు చేయండి (Cancel)</span>
+            </button>
+            <button class="km-btn" onclick="saveProfileChanges()" style="padding: 10px 24px;">
+              <span data-i18n="btn_save_profile">💾 వివరాలు భద్రపరచండి (Save Changes)</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 9. ABOUT ================= -->
+      <section id="view-about" class="km-view">
+        <div class="km-sec-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="16" x2="12" y2="12" />
+            <line x1="12" y1="8" x2="12.01" y2="8" />
+          </svg>
+          <span data-i18n="about_header">ప్రాజెక్ట్ వివరాలు (About)</span>
+        </div>
+        <div class="km-sec-subtitle" data-i18n="about_sub">కృషిమిత్ర ప్రాజెక్ట్ సృష్టికర్తలు, ఉద్దేశ్యం మరియు సాంకేతిక
+          విశేషాలు:</div>
+
+        <div class="km-glass"
+          style="padding: 20px; margin-bottom: 24px; border: 1px solid #34d399; background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 46, 32, 0.75) 100%);">
+          <div style="font-size: 1.15rem; font-weight: 800; color: #fbbf24; margin-bottom: 6px;">
+            📢 <span data-i18n="clarification_title">డెవలపర్లు (Developers):</span>
+          </div>
+          <p style="font-size: 0.95rem; color: #ffffff; line-height: 1.6; margin-bottom: 4px;"
+            data-i18n="clarification_body_te">
+            కృషిమిత్ర ప్రాజెక్ట్ డెవలపర్లు: <strong>ఆకర్ష అర్చన & షైనీ (B.Tech CSE AIML)</strong>.
+          </p>
+          <p style="font-size: 0.88rem; color: #cbd5e1; font-style: italic; line-height: 1.5;"
+            data-i18n="clarification_body_en">
+            (Project Developers: Aakarsha Archana & Shiney - B.Tech CSE AIML)
+          </p>
+        </div>
+
+        <div class="km-sec-title" style="margin-bottom: 14px;">
+          👩‍🎓 <span data-i18n="team_title">డెవలపర్లు (Developers)</span>
+        </div>
+        <div class="km-grid-2" style="margin-bottom: 24px;">
+          <div class="km-glass" style="padding: 24px; text-align: center;">
+            <div style="font-size: 3.5rem; margin-bottom: 10px;">👩‍🎓</div>
+            <div style="font-size: 1.45rem; font-weight: 800; color: #ffffff;">ఆకర్ష అర్చన (Aakarsha Archana)</div>
+            <div style="font-size: 0.95rem; color: #6ee7b7; font-weight: 700; margin: 8px 0;" data-i18n="dev_role_1">
+              కోర్సు: B.Tech CSE (AIML)</div>
+            <p style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.6; margin-top: 8px; display: none;" data-i18n="dev_desc_1">
+              B.Tech CSE (AIML)
+            </p>
+          </div>
+
+          <div class="km-glass" style="padding: 24px; text-align: center;">
+            <div style="font-size: 3.5rem; margin-bottom: 10px;">👩‍💻</div>
+            <div style="font-size: 1.45rem; font-weight: 800; color: #ffffff;">షైనీ (Shiney)</div>
+            <div style="font-size: 0.95rem; color: #6ee7b7; font-weight: 700; margin: 8px 0;" data-i18n="dev_role_2">
+              కోర్సు: B.Tech CSE (AIML)</div>
+            <p style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.6; margin-top: 8px; display: none;" data-i18n="dev_desc_2">
+              B.Tech CSE (AIML)
+            </p>
+          </div>
+        </div>
+
+        <div class="km-glass" style="padding: 22px;">
+          <div style="font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-bottom: 12px;">
+            🔬 <span data-i18n="tech_title">సాంకేతిక విశేషాలు (Technical Architecture)</span>
+          </div>
+          <div
+            style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; font-size: 0.92rem; color: #e2e8f0; line-height: 1.7;">
+            <div>
+              <strong data-i18n="tech_vision_title">🌿 విజన్ మోడల్:</strong> <span data-i18n="tech_vision_desc">MobileNetV2 డీప్ లెర్నింగ్ మోడల్ (54,305 ఆకుల చిత్రాలతో 97.15% ఖచ్చితత్వంతో శిక్షణ).</span><br>
+              <strong data-i18n="tech_frontend_title">⚡ ఫ్రంటెండ్:</strong> <span data-i18n="tech_frontend_desc">స్వచ్ఛమైన Semantic HTML5, CSS3, SVGs, Vanilla JS (0ms తక్షణ టాబ్ నావిగేషన్).</span>
+            </div>
+            <div>
+              <strong data-i18n="tech_weather_title">⛅ వాతావరణం:</strong> <span data-i18n="tech_weather_desc">ఓపెన్-మెటియో API ద్వారా లైవ్ విజయవాడ మరియు ఏపీ జిల్లాల స్ప్రే విండో అడ్వైజరీ.</span><br>
+              <strong data-i18n="tech_ai_title">🤖 AI అసిస్టెంట్:</strong> <span data-i18n="tech_ai_desc">హైబ్రిడ్ RAG, ANGRAU ప్యాకేజ్ ఆఫ్ ప్రాక్టీసెస్ మరియు వెబ్ సెర్చ్ అగ్రిగేషన్.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div> <!-- /.km-main-area -->
+  </div> <!-- /.km-app-layout -->
+
+  <!-- Mobile Bottom Sticky Navigation (Active ONLY on Mobile View - Crisp Fixed SVGs) -->
+  <nav class="km-bottom-nav">
+    <div class="km-nav-item active" data-tab="home" onclick="showTab('home')">
+      <div class="km-nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </div>
+      <span data-i18n="nav_b_home">హోమ్</span>
+    </div>
+
+    <div class="km-nav-item" data-tab="crop_health" onclick="showTab('crop_health')">
+      <div class="km-nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+          <path d="M2 21c0-3 1.85-5.36 5.08-6"/>
+        </svg>
+      </div>
+      <span data-i18n="nav_b_health">తెగుళ్ల స్కానర్</span>
+    </div>
+
+    <div class="km-nav-item" data-tab="weather" onclick="showTab('weather')">
+      <div class="km-nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+        </svg>
+      </div>
+      <span data-i18n="nav_b_weather">వాతావరణం</span>
+    </div>
+
+    <div class="km-nav-item" data-tab="soil" onclick="showTab('soil')">
+      <div class="km-nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 3v4.5l-4.5 9A3 3 0 0 0 7.2 21h9.6a3 3 0 0 0 2.7-4.5L15 7.5V3"/>
+          <line x1="8" y1="3" x2="16" y2="3"/>
+          <line x1="6.5" y1="14" x2="17.5" y2="14"/>
+        </svg>
+      </div>
+      <span data-i18n="nav_b_soil">నేల ఆరోగ్యం</span>
+    </div>
+
+    <div class="km-nav-item km-nav-item-ai" data-tab="assistant" onclick="showTab('assistant')">
+      <div class="km-nav-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="10" rx="3"/>
+          <circle cx="12" cy="5" r="2"/>
+          <path d="M12 7v4"/>
+          <circle cx="8" cy="16" r="1.2" fill="#34d399"/>
+          <circle cx="16" cy="16" r="1.2" fill="#34d399"/>
+        </svg>
+      </div>
+      <span data-i18n="nav_b_ai">AI Assistant</span>
+    </div>
+
+    <div class="km-nav-item" data-tab="community" onclick="showTab('community')">
+      <div class="km-nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+        </svg>
+      </div>
+      <span data-i18n="nav_b_comm">రైతు వేదిక</span>
+    </div>
+
+    <div class="km-nav-item" data-tab="about" onclick="showTab('about')">
+      <div class="km-nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+      </div>
+      <span data-i18n="nav_b_about">వివరాలు</span>
+    </div>
+  </nav>
+
+  </div> <!-- /#km-app-shell -->
+
+  <!-- ================= FULL DEDICATED SIGN IN PAGE ================= -->
+  <div id="km-signin-page" class="km-signin-page">
+    <div class="km-signin-card">
+
+      <!-- Language Toggle Row on Sign In Page (Switch language right on login screen!) -->
+      <div class="km-signin-lang-row">
+        <button class="km-lang-pill-btn active" id="signin-lang-te" onclick="setLanguage('te')">
+          🇮🇳 తెలుగు
+        </button>
+        <button class="km-lang-pill-btn" id="signin-lang-en" onclick="setLanguage('en')">
+          🌐 English
+        </button>
+      </div>
+
+      <!-- Brand Logo & Header -->
+      <div style="text-align: center; margin-bottom: 22px;">
+        <div style="font-size: 3.2rem; margin-bottom: 4px;">🌱</div>
+        <div style="font-size: 2rem; font-weight: 800; color: #34d399; letter-spacing: -0.5px;">KrishiMitra | కృషిమిత్ర
+        </div>
+        <div style="font-size: 0.88rem; color: #6ee7b7; font-weight: 600; margin-top: 4px;" data-i18n="hero_inst">
+          👩‍💻 ఆకర్ష అర్చన & షైనీ | B.Tech CSE (AIML)
+        </div>
+      </div>
+
+      <!-- 1-Tap Quick Access Demo Accounts (Switch User) -->
+      <div
+        style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(5, 150, 105, 0.18) 100%); border: 1.5px solid rgba(52, 211, 153, 0.5); border-radius: 16px; padding: 16px; margin-bottom: 22px; text-align: center;">
+        <div style="font-size: 1.1rem; font-weight: 800; color: #ffffff;" data-i18n="demo_quick_title">
+          ⚡ ఒక్క ట్యాప్‌తో ప్రవేశించండి (డెమో రైతులు)
+        </div>
+        <div style="font-size: 0.82rem; color: #a7f3d0; margin-top: 4px; margin-bottom: 12px;"
+          data-i18n="demo_quick_sub">
+          పాస్‌వర్డ్ అవసరం లేకుండా వెంటనే డాష్‌బోర్డ్ తెరవండి:
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <button class="km-btn km-btn-block" onclick="loginDemo('9440123456')"
+            style="padding: 12px 10px; font-size: 0.9rem; border-radius: 12px;">
+            👩‍🌾 <strong>Archana (అర్చన)</strong><br>
+            <span style="font-size:0.75rem; opacity:0.9;">Paddy • Vijayawada (Krishna)</span>
+          </button>
+          <button class="km-btn km-btn-block" onclick="loginDemo('9848054321')"
+            style="padding: 12px 10px; font-size: 0.9rem; border-radius: 12px; background: linear-gradient(135deg, #059669 0%, #047857 100%);">
+            👩‍🌾 <strong>Shiney (షైనీ)</strong><br>
+            <span style="font-size:0.75rem; opacity:0.9;">Chilli • Vijayawada (Krishna)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Auth Tabs: Login vs Register -->
+      <div
+        style="display: flex; gap: 10px; margin-bottom: 18px; border-bottom: 1px solid var(--km-border); padding-bottom: 12px;">
+        <button class="km-chip-btn active" id="tab-btn-login" onclick="showAuthTab('login')"
+          data-i18n="auth_tab_login">🔑 లాగిన్ (Mobile Login)</button>
+        <button class="km-chip-btn" id="tab-btn-register" onclick="showAuthTab('register')"
+          data-i18n="auth_tab_register">📝 కొత్త రైతు నమోదు (Register)</button>
+      </div>
+
+      <!-- Login Tab Content -->
+      <div id="auth-panel-login">
+        <div style="margin-bottom: 14px;">
+          <label style="font-size: 0.86rem; font-weight: 700; color: #cbd5e1;" data-i18n="lbl_auth_user">ఫోన్ నంబర్ లేదా
+            పేరు:</label>
+          <input type="text" id="login-username-input" class="km-input" placeholder="e.g. 9440123456 or Archana"
+            style="width: 100%; margin-top: 5px; padding: 10px 14px; font-size: 0.95rem;">
+        </div>
+        <div style="margin-bottom: 18px;">
+          <label style="font-size: 0.86rem; font-weight: 700; color: #cbd5e1;" data-i18n="lbl_auth_pass">పాస్‌వర్డ్
+            (Password):</label>
+          <input type="password" id="login-password-input" class="km-input" placeholder="••••••••"
+            style="width: 100%; margin-top: 5px; padding: 10px 14px; font-size: 0.95rem;">
+        </div>
+        <button class="km-btn km-btn-block" onclick="submitLogin()" style="padding: 12px; font-size: 1rem;"
+          data-i18n="btn_submit_login">
+          ఖాతాలోకి ప్రవేశించండి (Sign In)
+        </button>
+      </div>
+
+      <!-- Register Tab Content -->
+      <div id="auth-panel-register" style="display: none;">
+        <div style="margin-bottom: 10px;">
+          <label style="font-size: 0.84rem; font-weight: 700; color: #cbd5e1;" data-i18n="lbl_reg_name">పూర్తి పేరు (Full Name):</label>
+          <input type="text" id="reg-name" class="km-input" placeholder="మీ పేరు"
+            style="width: 100%; margin-top: 3px; padding: 8px 12px;">
+        </div>
+        <div style="margin-bottom: 10px;">
+          <label style="font-size: 0.84rem; font-weight: 700; color: #cbd5e1;" data-i18n="lbl_reg_phone">మొబైల్ నంబర్ (10 అంకెలు):</label>
+          <input type="text" id="reg-phone" class="km-input" placeholder="9440123456"
+            style="width: 100%; margin-top: 3px; padding: 8px 12px;">
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px;">
+          <div>
+            <label style="font-size: 0.84rem; font-weight: 700; color: #cbd5e1;" data-i18n="lbl_reg_dist">జిల్లా:</label>
+            <select id="reg-district" class="km-input" style="width: 100%; margin-top: 3px; padding: 8px;">
+              <option value="Vijayawada (Krishna)">Vijayawada (Krishna)</option>
+              <option value="Guntur">Guntur</option>
+              <option value="Eluru">Eluru</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size: 0.84rem; font-weight: 700; color: #cbd5e1;" data-i18n="lbl_reg_crop">ప్రధాన పంట:</label>
+            <select id="reg-crop" class="km-input" style="width: 100%; margin-top: 3px; padding: 8px;">
+              <option value="Paddy">వరి (Paddy)</option>
+              <option value="Chilli">మిర్చి (Chilli)</option>
+              <option value="Cotton">పత్తి (Cotton)</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-bottom: 10px;">
+          <label style="font-size: 0.84rem; font-weight: 700; color: #cbd5e1;" data-i18n="lbl_reg_acres">ఎకరాలు (Acres):</label>
+          <input type="number" id="reg-acres" class="km-input" value="3.0"
+            style="width: 100%; margin-top: 3px; padding: 8px 12px;">
+        </div>
+        <div style="margin-bottom: 16px;">
+          <label style="font-size: 0.84rem; font-weight: 700; color: #cbd5e1;" data-i18n="lbl_reg_pass">పాస్‌వర్డ్ (కనీసం 6 అక్షరాలు):</label>
+          <input type="password" id="reg-password" class="km-input" placeholder="••••••••"
+            style="width: 100%; margin-top: 3px; padding: 8px 12px;">
+        </div>
+        <button class="km-btn km-btn-block" onclick="submitRegister()" style="padding: 12px; font-size: 1rem;"
+          data-i18n="btn_submit_reg">
+          కొత్త ఖాతా సృష్టించండి (Register)
+        </button>
+      </div>
+
+      <!-- Return Link if session active -->
+      <div style="text-align: center; margin-top: 18px;">
+        <a href="javascript:void(0)" onclick="returnToDashboard()"
+          style="color: #6ee7b7; font-size: 0.85rem; text-decoration: underline;">
+          ← <span data-i18n="back_to_dashboard">డాష్‌బోర్డ్‌కి వెళ్లండి (Back to Dashboard)</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript Controller -->
+  <script src="/static/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+# Python virtual environments
+.venv/
+.venv*/
+venv/
+env/
+ENV/
+
+# Python cache & compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# API keys, secrets & environment variables
+.env
+.env.*
+!.env.example
+*.secrets.toml
+.streamlit/secrets.toml
+
+# Large model binaries & ONNX weights (>100MB exceeds GitHub limits)
+*.onnx
+models/multilingual_minilm/onnx/*.onnx
+.cache/
+**/.cache/
+
+# Training raw images & archives
+data/leaf_disease/
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Dynamic local databases & user state (not for version control)
+data/community_posts.json
+data/farmer_chats.json
+data/marketplace.sqlite3
+data/user_profile.json
+data/users.json
+*.sqlite3
+*.db
+
+# Temporary logs & build artifacts
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+installed_packages.txt
+
+# Operating System & IDE
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Stray scraped / CLI temporary artifacts
+/button*
+/div*
