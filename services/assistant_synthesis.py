@@ -1,5 +1,5 @@
 """KrishiMitra AI - Comprehensive Agronomic & Farmer Intelligence Engine
-Developed by: Aakarsha Archana & Shiney (B.Tech CSE AIML)
+Developed by: Aakarsha Archana & Shiney (B.Tech AIML)
 Specially engineered for Krishna Delta, Guntur, and Andhra Pradesh Agriculture
 """
 
@@ -405,7 +405,7 @@ def generate_combined_answer(query: str, kau_results: list, web_results: list, c
             client = OpenAI(api_key=api_key)
             is_tel = (language in ["Telugu", "తెలుగు"])
             prompt = (
-                f"You are a Senior Agronomist at KrishiMitra, an agricultural platform developed by Aakarsha Archana & Shiney (B.Tech CSE AIML).\n"
+                f"You are a Senior Agronomist at KrishiMitra, an agricultural platform developed by Aakarsha Archana & Shiney (B.Tech AIML).\n"
                 f"Farmer Question: '{query}'\n"
                 f"Crop context: '{crop}'\n"
                 f"Provide direct, highly practical and scientific advisory for Andhra Pradesh farmers.\n"

@@ -230,7 +230,7 @@ def render_login_portal():
                 KrishiMitra | కృషిమిత్ర విజయవాడ
             </div>
             <div style='color: #6ee7b7; font-weight: 600; font-size: 1.05rem; margin-top: 4px;'>
-                Aakarsha Archana & Shiney (B.Tech CSE AIML)
+                Aakarsha Archana & Shiney (B.Tech AIML)
             </div>
             <div style='color: #a7f3d0; font-size: 0.95rem; margin-top: 2px;'>
                 AI-Powered Smart Agriculture for Vijayawada, Krishna Delta & AP Farmers

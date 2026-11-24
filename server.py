@@ -25,7 +25,7 @@ from services.web_search import search_agricultural_web
 from services.assistant_synthesis import generate_combined_answer
 
 app = FastAPI(
-    title="KrishiMitra API | Aakarsha Archana & Shiney (B.Tech CSE AIML)",
+    title="KrishiMitra API | Aakarsha Archana & Shiney (B.Tech AIML)",
     description="Backend API for AI-powered agricultural decision support system",
     version="2.0.0"
 )

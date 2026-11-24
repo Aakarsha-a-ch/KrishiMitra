@@ -1,8 +1,8 @@
 # 🌾 KrishiMitra (కృషిమిత్ర) — Complete A-Z Project Architecture, Rationale & User Guide
 
 ### 👩‍💻 Developed by:
-- **Aakarsha Archana** — B.Tech CSE (AIML)
-- **Shiney** — B.Tech CSE (AIML)
+- **Aakarsha Archana** — B.Tech AIML
+- **Shiney** — B.Tech AIML
 
 ---
 
@@ -48,7 +48,7 @@
 
 # 1. Executive Summary & Background
 
-**KrishiMitra (కృషిమిత్ర)** is an intelligent agricultural decision support system engineered by **Aakarsha Archana** and **Shiney** (B.Tech CSE AIML).
+**KrishiMitra (కృషిమిత్ర)** is an intelligent agricultural decision support system engineered by **Aakarsha Archana** and **Shiney** (B.Tech AIML).
 
 The platform is designed to provide farmers in the **Krishna Delta**, **Guntur**, **Godavari**, and broader **Andhra Pradesh** farming belts with instant, data-driven, and research-backed agricultural guidance directly accessible from mobile phones or desktop browsers.
 
@@ -234,7 +234,7 @@ Agriculture in Andhra Pradesh faces several critical challenges that directly im
 - **Interactive Edit Mode**: Farmers can edit full name, phone number, district, village/mandal, crop, and land acreage, persisting changes instantly across the entire dashboard.
 
 ### 2.11 Project Details & Developers (About View)
-- Features developer profiles of **Aakarsha Archana** and **Shiney** (B.Tech CSE AIML).
+- Features developer profiles of **Aakarsha Archana** and **Shiney** (B.Tech AIML).
 - Details the technical architecture of the MobileNet vision model, Open-Meteo telemetry, and Hybrid RAG.
 
 ---
@@ -363,7 +363,7 @@ Agriculture in Andhra Pradesh faces several critical challenges that directly im
 This project stands as a testament to practical engineering applied to rural and grassroots agricultural development. 
 
 - **Developers**: **Aakarsha Archana** & **Shiney**
-- **Course**: **B.Tech CSE (AIML)**
+- **Course**: **B.Tech AIML**
 - **Year of Development**: 2026
 
 *Empowering Andhra Pradesh farmers through intelligent, accessible, and compassionate technology.*

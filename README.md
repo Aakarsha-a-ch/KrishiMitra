@@ -1,6 +1,6 @@
 # 🌱 KrishiMitra (కృషిమిత్ర)
 ### AI-Powered Smart Agricultural Decision Support Platform
-#### Developed by: **Aakarsha Archana** & **Shiney** (B.Tech CSE AIML)
+#### Developed by: **Aakarsha Archana** & **Shiney** (B.Tech AIML)
 
 ---
 
@@ -22,8 +22,8 @@ The platform bridges the gap between complex agricultural science and field-leve
 
 ## 👥 Developers
 
-- **Aakarsha Archana** — B.Tech CSE (AIML)
-- **Shiney** — B.Tech CSE (AIML)
+- **Aakarsha Archana** — B.Tech AIML
+- **Shiney** — B.Tech AIML
 
 - **Focus Region:** Krishna Delta & Andhra Pradesh Agro-Climatic Zones.
 - **Primary Languages Supported:** Telugu (తెలుగు) & English.
@@ -212,10 +212,10 @@ If you use or reference **KrishiMitra** in your academic research, project repor
   author = {Aakarsha Archana and Shiney},
   title = {KrishiMitra: AI-Powered Smart Agricultural Decision Support Platform for Andhra Pradesh Farmers},
   year = {2026},
-  course = {B.Tech CSE (AIML)}
+  course = {B.Tech AIML}
 }
 ```
 
 ---
 
-*Engineered with precision for the farming community of Vijayawada and Andhra Pradesh by **Aakarsha Archana & Shiney (B.Tech CSE AIML)**.*
+*Engineered with precision for the farming community of Vijayawada and Andhra Pradesh by **Aakarsha Archana & Shiney (B.Tech AIML)**.*

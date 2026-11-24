@@ -1,4 +1,4 @@
-"""Bilingual translations (English & Telugu) for KrishiMitra - Developed by Aakarsha Archana & Shiney (B.Tech CSE AIML).
+"""Bilingual translations (English & Telugu) for KrishiMitra - Developed by Aakarsha Archana & Shiney (B.Tech AIML).
 """
 
 TRANSLATIONS = {
@@ -8,12 +8,12 @@ TRANSLATIONS = {
         "Telugu": "🌱 కృషిమిత్ర | KrishiMitra - విజయవాడ"
     },
     "app_subtitle": {
-        "English": "Intelligent Agricultural Advisory Platform | Aakarsha Archana & Shiney (B.Tech CSE AIML)",
-        "Telugu": "స్మార్ట్ వ్యవసాయ సలహా వేదిక | ఆకర్ష అర్చన & షైనీ (B.Tech CSE AIML)"
+        "English": "Intelligent Agricultural Advisory Platform | Aakarsha Archana & Shiney (B.Tech AIML)",
+        "Telugu": "స్మార్ట్ వ్యవసాయ సలహా వేదిక | ఆకర్ష అర్చన & షైనీ (B.Tech AIML)"
     },
     "app_welcome": {
-        "English": "Welcome to KrishiMitra, developed by Aakarsha Archana & Shiney (B.Tech CSE AIML) — an AI-powered decision support platform tailored to farmers with special focus on Vijayawada and Andhra Pradesh agricultural zones.",
-        "Telugu": "ఆకర్ష అర్చన & షైనీ (B.Tech CSE AIML) వారిచే రూపొందించబడిన కృషిమిత్ర వేదికకు స్వాగతం — విజయవాడ మరియు ఆంధ్రప్రదేశ్ రైతుల కోసం ప్రత్యేకంగా తీర్చిదిద్దిన సమగ్ర ఎఐ వ్యవసాయ సహాయక వ్యవస్థ."
+        "English": "Welcome to KrishiMitra, developed by Aakarsha Archana & Shiney (B.Tech AIML) — an AI-powered decision support platform tailored to farmers with special focus on Vijayawada and Andhra Pradesh agricultural zones.",
+        "Telugu": "ఆకర్ష అర్చన & షైనీ (B.Tech AIML) వారిచే రూపొందించబడిన కృషిమిత్ర వేదికకు స్వాగతం — విజయవాడ మరియు ఆంధ్రప్రదేశ్ రైతుల కోసం ప్రత్యేకంగా తీర్చిదిద్దిన సమగ్ర ఎఐ వ్యవసాయ సహాయక వ్యవస్థ."
     },
     
     # Sidebar

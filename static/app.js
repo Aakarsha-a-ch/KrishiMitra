@@ -1,6 +1,6 @@
 /**
  * KrishiMitra - Modern Zero-Lag Frontend Controller
- * Developed by: Aakarsha Archana & Shiney (B.Tech CSE AIML)
+ * Developed by: Aakarsha Archana & Shiney (B.Tech AIML)
  */
 
 // Application State
@@ -54,7 +54,7 @@ const translations = {
 
     // Hero Section
     hero_greeting: "నమస్కారం, {name} గారు! 🌾",
-    hero_inst: "👩‍💻 ఆకర్ష అర్చన & షైనీ | B.Tech CSE (AIML)",
+    hero_inst: "👩‍💻 ఆకర్ష అర్చన & షైనీ | B.Tech AIML",
     hero_desc: "కృష్ణా డెల్టా మరియు ఆంధ్రప్రదేశ్ రైతుల కోసం రూపొందించిన ఆధునిక AI వ్యవసాయ నిర్ణయ వేదిక. మొబైల్ నెట్ తెగుళ్ల గుర్తింపు, లైవ్ విజయవాడ వాతావరణం, సమగ్ర నేల ఎరువుల లెక్కలు మరియు మార్కెట్ ధరలు ఒకే చోట.",
     home_weather_title: "లైవ్ విజయవాడ వాతావరణం",
     view_full_weather: "పూర్తి వాతావరణం చూడండి",
@@ -189,13 +189,13 @@ const translations = {
     about_header: "ప్రాజెక్ట్ వివరాలు (About)",
     about_sub: "కృషిమిత్ర ప్రాజెక్ట్ సృష్టికర్తలు మరియు సాంకేతిక విశేషాలు:",
     clarification_title: "డెవలపర్లు (Developers):",
-    clarification_body_te: "కృషిమిత్ర ప్రాజెక్ట్ డెవలపర్లు: ఆకర్ష అర్చన & షైనీ (B.Tech CSE AIML).",
-    clarification_body_en: "(Project Developers: Aakarsha Archana & Shiney - B.Tech CSE AIML).",
+    clarification_body_te: "కృషిమిత్ర ప్రాజెక్ట్ డెవలపర్లు: ఆకర్ష అర్చన & షైనీ (B.Tech AIML).",
+    clarification_body_en: "(Project Developers: Aakarsha Archana & Shiney - B.Tech AIML).",
     team_title: "డెవలపర్లు (Developers)",
     dev_role_1: "కోర్సు",
-    dev_desc_1: "B.Tech CSE (AIML)",
+    dev_desc_1: "B.Tech AIML",
     dev_role_2: "కోర్సు",
-    dev_desc_2: "B.Tech CSE (AIML)",
+    dev_desc_2: "B.Tech AIML",
     tech_title: "సాంకేతిక విశేషాలు (Technical Architecture)",
 
     // Login Portal
@@ -215,7 +215,7 @@ const translations = {
     wind_dir_east: "తూర్పు దిశ",
     lbl_temp_c: "ఉష్ణోగ్రత (°C):",
     lbl_humidity_pct: "తేమ (%):",
-    prof_student_credit: "👩‍💻 ఆకర్ష అర్చన & షైనీ (B.Tech CSE AIML)",
+    prof_student_credit: "👩‍💻 ఆకర్ష అర్చన & షైనీ (B.Tech AIML)",
     prof_sub_holding: "కృష్ణా డెల్టా వ్యవసాయ హోల్డింగ్",
     prof_sub_variety: "BPT 5204 సాంబా మసూరి",
     prof_sub_canal: "కృష్ణా తూర్పు ప్రధాన కాలువ",
@@ -275,7 +275,7 @@ const translations = {
 
     // Hero Section
     hero_greeting: "Welcome, {name}! 🌾",
-    hero_inst: "👩‍💻 Aakarsha Archana & Shiney | B.Tech CSE (AIML)",
+    hero_inst: "👩‍💻 Aakarsha Archana & Shiney | B.Tech AIML",
     hero_desc: "Advanced Agricultural Decision Support System engineered for farmers across Krishna Delta and Andhra Pradesh. Instant MobileNet disease diagnosis, Open-Meteo live weather telemetry, soil NPK fertilizer scheduling, and live AP Mandi rates.",
     home_weather_title: "Live Vijayawada Weather",
     view_full_weather: "View Detailed Weather",
@@ -408,13 +408,13 @@ const translations = {
     about_header: "About",
     about_sub: "KrishiMitra project creators and technical architecture:",
     clarification_title: "Developers:",
-    clarification_body_te: "Project Developers: Aakarsha Archana & Shiney (B.Tech CSE AIML).",
-    clarification_body_en: "(Project Developers: Aakarsha Archana & Shiney - B.Tech CSE AIML).",
+    clarification_body_te: "Project Developers: Aakarsha Archana & Shiney (B.Tech AIML).",
+    clarification_body_en: "(Project Developers: Aakarsha Archana & Shiney - B.Tech AIML).",
     team_title: "Developers",
     dev_role_1: "Course",
-    dev_desc_1: "B.Tech CSE (AIML)",
+    dev_desc_1: "B.Tech AIML",
     dev_role_2: "Course",
-    dev_desc_2: "B.Tech CSE (AIML)",
+    dev_desc_2: "B.Tech AIML",
     tech_title: "Technical Architecture",
 
     // Login Portal
@@ -434,7 +434,7 @@ const translations = {
     wind_dir_east: "East Direction",
     lbl_temp_c: "Temperature (°C):",
     lbl_humidity_pct: "Humidity (%):",
-    prof_student_credit: "👩‍💻 Aakarsha Archana & Shiney (B.Tech CSE AIML)",
+    prof_student_credit: "👩‍💻 Aakarsha Archana & Shiney (B.Tech AIML)",
     prof_sub_holding: "Krishna Delta Farm Holding",
     prof_sub_variety: "BPT 5204 Samba Mahsuri",
     prof_sub_canal: "Krishna East Main Canal",
@@ -621,8 +621,8 @@ function applyLanguage() {
   const welcomeTextEl = document.getElementById('chat-welcome-text');
   if (welcomeTextEl) {
     welcomeTextEl.innerText = isTel
-      ? 'నమస్కారం! నేను కృషిమిత్ర AI సహాయకుడిని (డెవలపర్లు: ఆకర్ష అర్చన & షైనీ - B.Tech CSE AIML). మీ పంట తెగుళ్లు, ఎరువుల మోతాదు, వాతావరణం లేదా ప్రభుత్వ పథకాల గురించి ఏ ప్రశ్నైనా నన్ను అడగవచ్చు.'
-      : 'Hello! I am KrishiMitra AI Assistant (Developed by: Aakarsha Archana & Shiney - B.Tech CSE AIML). Ask me anything about crop diseases, fertilizers, weather, or government schemes.';
+      ? 'నమస్కారం! నేను కృషిమిత్ర AI సహాయకుడిని (డెవలపర్లు: ఆకర్ష అర్చన & షైనీ - B.Tech AIML). మీ పంట తెగుళ్లు, ఎరువుల మోతాదు, వాతావరణం లేదా ప్రభుత్వ పథకాల గురించి ఏ ప్రశ్నైనా నన్ను అడగవచ్చు.'
+      : 'Hello! I am KrishiMitra AI Assistant (Developed by: Aakarsha Archana & Shiney - B.Tech AIML). Ask me anything about crop diseases, fertilizers, weather, or government schemes.';
   }
 
   const assistantChipsContainer = document.getElementById('assistant-chips-container');
