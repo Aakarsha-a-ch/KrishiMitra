@@ -172,25 +172,23 @@ krishimitra/
 
 ## 💻 Running the Application
 
-### 1. Activate your Python environment
+### 1. Start the Application Server
+Run either of the following commands in your terminal or PowerShell:
 ```bash
-# Windows (PowerShell)
-.\venv\Scripts\Activate.ps1
-
-# Linux / macOS
-source venv/bin/activate
+python server.py
 ```
-
-### 2. Start the FastAPI Application
+*Or directly via Uvicorn:*
 ```bash
 python -m uvicorn server:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-### 3. Open your browser
+### 2. Open Your Browser
 Open your browser and navigate to:
 ```
 http://localhost:8000
 ```
+
+*(Note: Virtual environment activation is completely optional. If using a custom venv on Windows PowerShell, run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process` if script execution is blocked).*
 
 ---
 
